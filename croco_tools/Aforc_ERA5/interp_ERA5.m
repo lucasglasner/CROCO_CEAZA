@@ -352,12 +352,20 @@ if ~isempty(nc_blk)
   nc_blk{'uwnd'}(tout,:,:)=u10;
   nc_blk{'vwnd'}(tout,:,:)=v10;
   nc_blk{'wspd'}(tout,:,:)=wspd;
-    %
-    % Compute the stress
-    %
-  ewss_path=[ERA5_dir,'EWSS','_Y',num2str(Y),'M',num2str(M),'.nc'];
-  nwss_path=[ERA5_dir,'NSSS','_Y',num2str(Y),'M',num2str(M),'.nc'];
+  %   %
+  %   % Compute the stress
+  %   %
+  % ewss_path=[ERA5_dir,'EWSS','_Y',num2str(Y),'M',num2str(M),'.nc'];
+  % nwss_path=[ERA5_dir,'NSSS','_Y',num2str(Y),'M',num2str(M),'.nc'];
 
+  % [Cd,uu]=cdnlp(wspd,10.);
+  % rhoa=air_dens(tair,rhum*100);
+  % tx=Cd.*rhoa.*uwnd.*wspd;
+  % ty=Cd.*rhoa.*vwnd.*wspd;
+  % sustr=rho2u_2d(tx.*cosa+ty.*sina);
+  % svstr=rho2v_2d(ty.*cosa-tx.*sina);
+  % nc_blk{'sustr'}(tout,:,:)=sustr;% => ERA5 not downloaded
+  % nc_blk{'svstr'}(tout,:,:)=svstr;% => ERA5 not downloaded
   % vname='EWSS';
   % nc=netcdf([ERA5_dir,vname,'_Y',num2str(Y),'M',num2str(M),'.nc']);
   % tx=squeeze(nc{vname}(tin,:,:));
@@ -377,14 +385,6 @@ if ~isempty(nc_blk)
   % nc_blk{'sustr'}(tout,:,:)=sustr;% => ERA5 downloaded
   % nc_blk{'svstr'}(tout,:,:)=svstr;% => ERA5 downloaded
 
-  [Cd,uu]=cdnlp(wspd,10.);
-  rhoa=air_dens(tair,rhum*100);
-  tx=Cd.*rhoa.*uwnd.*wspd;
-  ty=Cd.*rhoa.*vwnd.*wspd;
-  sustr=rho2u_2d(tx.*cosa+ty.*sina);
-  svstr=rho2v_2d(ty.*cosa-tx.*sina);
-  nc_blk{'sustr'}(tout,:,:)=sustr;% => ERA5 not downloaded
-  nc_blk{'svstr'}(tout,:,:)=svstr;% => ERA5 not downloaded
 end
 end
 

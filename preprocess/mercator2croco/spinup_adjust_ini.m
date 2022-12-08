@@ -1,17 +1,18 @@
 clear all
 close all
 %
-DIRDATA='../../CEAZAMAR-H/CROCO_FILES/';
-addpath(['../../CEAZAMAR-H/']);
+%
+DIRDATA='/home/lucasg/CROCO/NCCHILEV2/CROCO_FILES/';
+addpath(['/home/lucasg/CROCO/NCCHILEV2/']);
 start
 crocotools_param
-name='ceazamar_ini_mercator_';
+name='ncchilev2_ini_mercator_';
 %
 %Dateref=datenum('1958-01-01 00:00:00','yyyy-mm-dd HH:MM:SS');
 TIME_INIT=datenum('1900-01-01 00:00:00','yyyy-mm-dd HH:MM:SS');
-Yiniref=2020;%a??o de referencia para replicar en el spinup
-Ymin=2018;  
-Ymax=2018;
+Yiniref=2006;%a??o de referencia para replicar en el spinup
+Ymin=2004;  
+Ymax=2004;
 Mmin=1;
 Mmax=1;
 

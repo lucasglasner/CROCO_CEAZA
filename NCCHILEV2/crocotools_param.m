@@ -55,7 +55,7 @@ CROCO_config = 'ncchilev2';
 lonmin =  281.;   % Minimum longitude [degree east] -82W(278)
 lonmax =  290.;   % Maximum longitude [degree east] 70W
 latmin =  -34.0;   % Minimum latitude  [degree north]
-latmax = -27
+latmax = -27;
 % latmax =  -21.5;   % Maximum latitude  [degree north]
 
 %
@@ -147,7 +147,7 @@ RUN_dir='/home/lucasg/CROCO/NCCHILEV2/';
 %
 %  CROCO input netcdf files directory
 %
-CROCO_files_dir=['/home/lucasg/CROCO/CROCO_FILES/'];
+CROCO_files_dir=['/home/lucasg/CROCO/NCCHILEV2/CROCO_FILES/'];
 %
 %  Global data directory (etopo, coads, datasets download from ftp, etc..)
 %
@@ -155,7 +155,7 @@ DATADIR='/home/lucas/CROCO/croco_tools/';
 %
 %  Forcing data directory (ncep, quikscat, datasets download with opendap, etc..)
 %
-FORC_DATA_DIR = ['/home/lucasg/CROCO/DATA/'];
+FORC_DATA_DIR = ['/home/lucasg/CROCO/NCCHILEV2/DATA/'];
 %
 if (isoctave == 0)
 	eval(['!mkdir ',CROCO_files_dir])
@@ -191,7 +191,7 @@ blk_prefix=[CROCO_files_dir,'ncchilev2_blk'];      % bulk file name
 %  Topography netcdf file name (ETOPO 2 or any other netcdf file
 %  in the same format)
 %
-topofile = ['/home/lucasg/storage/GEBCO/GEBCO_2022.nc'];
+topofile = ['/home/lucasg/storage/GEBCO/GEBCO_SOUTHEASTPACIFIC.nc'];
 %topofile = [DATADIR,'BATIMETRIA/GINA/gina_Coquimbo.nc'];
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -338,9 +338,9 @@ Hmin          = 0;             % Hour of initialization
 Min_min       = 0;             % Minute of initialization
 Smin          = 0;             % Second of initialization
 %
-SPIN_Long     = 0;             % SPIN-UP duration in Years
+SPIN_Long     = 2;             % SPIN-UP duration in Years
 %
-Mth_format    = '%02d';        % Number of digit for month on input files
+Mth_format    = '%01d';        % Number of digit for month on input files
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -410,7 +410,7 @@ itolap_ecmwf = 0;                                      % 3 records for daily  EC
 ERA5_dir= [FORC_DATA_DIR,'ERA5_',CROCO_config,'/'];   % ERA-I data dir. [croco format]
 My_ERA5_dir=[FORC_DATA_DIR,'ERA5/'];                  % ERA-I native data downloaded 
                                                       % with python script
-itolap_era5 = 8;                                      % 2 records = 2 hours
+itolap_era5 = 0                                       % 2 records = 2 hours
 %
 %
 %--------------------------------------------

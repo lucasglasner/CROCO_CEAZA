@@ -1,0 +1,1 @@
+/home/lucasg/CROCO/croco_tools/Oforc_OGCM/download_glorys_data.sh

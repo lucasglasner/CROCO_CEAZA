@@ -47,10 +47,10 @@ for line in paramFile:
 # year_start=2012
 # month_start=1
 
-# Ymin          = 2003;          % first forcing year
-# Ymax          = 2003;          % last  forcing year
-# Mmin          = 1;             % first forcing month
-# Mmax          = 12;             % last  forcing month
+#year_start          = 1993; #         % first forcing year
+#year_end          = 2020;  #        % last  forcing year
+#month_start          = 1;      #       % first forcing month
+#month_end          = 12;      #       % last  forcing month
 # config_name = 'CHILE_CENTRAL'
 #
 # Original ERA5 directory
@@ -76,7 +76,7 @@ era5_dir_processed = config_dir + 'DATA/ERA5_' + config_name
 # ---------------------------------------------------------------------------- #
 #                                 OVERLAP DAYS                                 #
 # ---------------------------------------------------------------------------- #
-n_overlap = 0
+n_overlap = 8
 
 # Request time (daily hours '00/01/.../23')
 #

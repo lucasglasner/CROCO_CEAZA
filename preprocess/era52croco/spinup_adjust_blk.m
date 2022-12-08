@@ -2,16 +2,16 @@ clear all
 close all
 
 %
-DIRDATA='../../CEAZAMAR-H/CROCO_FILES/';
-addpath(['../../CEAZAMAR-H/']);
+DIRDATA='/home/lucasg/CROCO/NCCHILEV2/CROCO_FILES/';
+addpath(['/home/lucasg/CROCO/NCCHILEV2/']);
 start
 crocotools_param
-name='ceazamar_blk_ERA5_';
+name='ncchilev2_blk_ERA5_';
 %
 TIME_INIT=datenum('1900-01-01 00:00:00','yyyy-mm-dd HH:MM:SS');
-Yblkref=2020;%a??o de referencia para replicar en el spinup
-Ymin=2018;  
-Ymax=2019;
+Yblkref=2006;%a??o de referencia para replicar en el spinup
+Ymin=2004;  
+Ymax=2005;
 Mmin=1;
 Mmax=12;
 

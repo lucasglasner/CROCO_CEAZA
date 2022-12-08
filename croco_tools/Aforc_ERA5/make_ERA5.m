@@ -34,8 +34,8 @@ close all
 % Common parameters
 %
 crocotools_param                      
-blk_prefix=[blk_prefix,'_ERA5_'];
-frc_prefix=[frc_prefix,'_ERA5_'];
+blk_prefix=[blk_prefix,'_'];
+frc_prefix=[frc_prefix,'_'];
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % end of user input  parameters

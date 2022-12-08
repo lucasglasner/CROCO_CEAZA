@@ -117,9 +117,9 @@ for j in range(len_monthly_dates):
 
     # Year and month
     year = monthly_date.year;
-    #month = monthly_date.month;
+    month = monthly_date.month;
     #year = year
-    month = 12
+    # month = 12
 
     # Number of days in month
     days_in_month = calendar.monthrange(year,month)[1]
@@ -178,8 +178,9 @@ for j in range(len_monthly_dates):
            product = 'reanalysis-era5-single-levels'
 
         # Output filename
-        fname = 'ERA5_ecmwf_' + vname.upper() + '_Y' + str(year) + 'M' + str(month).zfill(2) + '.nc'
+        fname = 'ERA5_' + vname.upper() + '_Y' + str(year) + 'M' + str(month).zfill(2) + '.nc'
         output = era5_dir_raw + '/' + fname
+     #   options['filename'] = output
 
         # Information strings
         info_time_clock = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -200,14 +201,15 @@ for j in range(len_monthly_dates):
         # Server ECMWF-API
         c = cdsapi.Client()
 
-        # ----------------- edit lucas 2022 check for file existance ----------------- #
-        #Check file existance
+        # # ----------------- edit lucas 2022 check for file existance ----------------- #
+        # #Check file existance
         
         if os.path.exists(output):
             print('\n File already exists in: '+output)
         else:
             # Do the request
             c.retrieve(product,options,output)
+            pass
   
     # ---------------------------------------------------------------------
     # Next iteration to monthly date: add one month to current monthly date

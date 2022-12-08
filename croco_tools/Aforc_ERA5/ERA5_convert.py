@@ -100,8 +100,8 @@ for iyear in range(year_start,year_end+1):
 #
 
         time = time / 24.
-        # time = time - date.toordinal(date(Yorig,1,1)) \
-	#             + date.toordinal(date(1900,1,1))
+        time = time - date.toordinal(date(Yorig,1,1)) \
+	            + date.toordinal(date(1900,1,1))
 
 #
 # Changes names
